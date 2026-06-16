@@ -38,7 +38,7 @@ function createCoin(angleX = 0, angleY = 0, angleZ = 0) {
 
   noStroke();
   let radius = Math.max(width / 8, height / 8);
-  let depth = 7.23;
+  let depth = radius*0.144;
   textureWrap(REPEAT);
   texture(sideTexture);
   cylinder(radius, depth, 50, 1, false, false);
