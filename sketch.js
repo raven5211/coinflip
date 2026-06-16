@@ -15,8 +15,6 @@ function setup() {
   tails = buildGeometry(createDisk);
 }
 
-theta = 0;
-
 function draw() {
   background(220);
   orbitControl();
