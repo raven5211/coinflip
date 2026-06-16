@@ -37,7 +37,7 @@ function createCoin(angleX = 0, angleY = 0, angleZ = 0) {
   rotateX(angleZ);
 
   noStroke();
-  let radius = Math.max(width / 8, height / 8);
+  let radius = width < height ? width / 4 : height / 6;
   let depth = radius*0.12;
   textureWrap(REPEAT);
   texture(sideTexture);
@@ -60,7 +60,7 @@ function createCoin(angleX = 0, angleY = 0, angleZ = 0) {
   pop();
 }
 
-function createDisk(radius = Math.max(width / 8, height / 8), sides = 50) {
+function createDisk(radius = width < height ? width / 4 : height / 6, sides = 50) {
   beginShape(TRIANGLE_FAN);
   // Center of the cap
   vertex(0, 0, 0, 0.5, 0.5);
