@@ -1,3 +1,4 @@
+let defaultRadius;
 let headsTexture;
 let tailsTexture;
 let sideTexture;
@@ -9,6 +10,7 @@ function preload() {
 
 function setup() {
   createCanvas(windowWidth, windowHeight, WEBGL);
+  defaualtRadius = Math.max(windowWidht/16, windowHeight/16);
   cam = createCamera();
   //cam.roll(-QUARTER_PI/4)
   heads = buildGeometry(createDisk);
@@ -37,7 +39,7 @@ function createCoin(angleX = 0, angleY = 0, angleZ = 0) {
   rotateX(angleZ);
 
   noStroke();
-  let radius = width/16;
+  let radius = defaualtRadius;
   let depth = 7.23;
   textureWrap(REPEAT);
   texture(sideTexture);
@@ -60,7 +62,7 @@ function createCoin(angleX = 0, angleY = 0, angleZ = 0) {
   pop();
 }
 
-function createDisk(radius = width/16, sides = 50) {
+function createDisk(radius = defaualtRadius, sides = 50) {
   beginShape(TRIANGLE_FAN);
   // Center of the cap
   vertex(0, 0, 0, 0.5, 0.5);
